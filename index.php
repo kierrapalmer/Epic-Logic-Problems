@@ -26,13 +26,26 @@
                     }
                 });
             });
+        });
+        $(document).ready(function(){
+            $("#primeNumber").click(function(){
 
+                $.ajax({
+                    type: 'POST',
+                    url: 'prime-number.php',
+                    success: function(data) {
+                        $("p").html(data);
+
+                    }
+                });
+            });
         });
 	</script>
 
 </head>
 <body>
 <input type="button" value="Sword Circle" id="swordCircle">
+<input type="button" value="Prime Number" id="primeNumber">
 <p></p>
 </body>
 </html>
