@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * 	A man has to buy 7 floors in a building. Numbered floor 1 to 68.
  *  Conditions:
 	 * 1. He cannot buy floors with prime number.

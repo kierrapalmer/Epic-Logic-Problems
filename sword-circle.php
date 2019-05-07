@@ -1,12 +1,13 @@
 
 <?php
-/*
-Sword Circle Problem
-100 people stand in a circle in order 1 to 100. No. 1 has a sword.
-He kills the next person (i.e. No. 2) and gives the sword to the next
-living person (i.e. No. 3).
-All people do the same until only 1 survives. Which number survives to the end?
-Author: Kierra Palmer
+/**
+* Sword Circle Problem
+* 100 people stand in a circle in order 1 to 100. No. 1 has a sword.
+* He kills the next person (i.e. No. 2) and gives the sword to the next
+* living person (i.e. No. 3).
+* All people do the same until only 1 survives. Which number survives to the end?
+*
+* Author: Kierra Palmer
 */
 
 //Whether to use associate array
