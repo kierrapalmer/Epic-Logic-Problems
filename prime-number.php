@@ -10,9 +10,6 @@
  * Author: Kierra Palmer
  * Date: May 7, 2019*/
 
-//All Primes:2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67
-//Valid Floors: 4 6 8 9 10 14 16 18 40 44 46 48 49 60 64 66 68
-
 	$totalFloors = 68;
 	$validFloors = 0;
 
@@ -45,7 +42,7 @@
 
 	}
 
-	echo '<br/> Number of Valid Floors: ' . $validFloors . '<br/>';
+	echo '<br/> Number of Valid Floors: <strong>' . $validFloors . '</strong><br/>';
 
 
 	//Check if a number is prime

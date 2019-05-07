@@ -8,30 +8,34 @@
  *
  * Author: Kierra Palmer
  * Date: May 7, 2019*/
+
 $painter1 = [];
 $painter2 = [];
 
+//Paint every other door, starting at 1
 echo 'Painter 1\'s Doors: ';
-for($i=1; $i<=100; $i+=2){
-	array_push($painter1, $i);
-	echo $i . ' ';
+for($p1=1; $p1<=100; $p1+=2){
+	array_push($painter1, $p1);
+	echo $p1 . ' ';
 }
 echo '<br />';
 
+
+//Paint every third door, starting at 100
 echo 'Painter 2\'s Doors: ' ;
-for($j=100; $j>0; $j-=3){
-	array_push($painter2, $j);
-	echo $j . ' ';
+for($p2=100; $p2>0; $p2-=3){
+	array_push($painter2, $p2);
+	echo $p2 . ' ';
 }
 echo '<br /><br />';
 
 
-for($k=0; $k<count($painter1); $k++){
+for($i=0; $i<count($painter1); $i++){
 	//if the number of doors inbetween the two painters is less than one
 	//then they have meet at the middle
-	if($painter2[$k]-$painter1[$k] < 1) {
-		echo 'When they meet in the middle, Painter 1 will be at door <strong>#' . $painter1[$k] .
-			' </strong> and Painter 2 will be at door <strong>#' . $painter2[$k] . '</strong>';
+	if($painter2[$i]-$painter1[$i] < 1) {
+		echo 'When they meet in the middle, Painter 1 will be at door <strong>#' . $painter1[$i] .
+			' </strong> and Painter 2 will be at door <strong>#' . $painter2[$i] . '</strong>';
 		break;
 	}
 }

@@ -8,45 +8,40 @@
 * All people do the same until only 1 survives. Which number survives to the end?
 *
 * Author: Kierra Palmer
+ * Date: May 7, 2019*
 */
 
-//Whether to use associate array
-//Realized that I could use just get delete value from array instead of marking it as false
-//upgraded to php version 7.3 to take advantage of array_key_last which allowed me to get last key without moving pointer position
+	//NOTE: This program requires PHP version 7.3
+	$circle = array_fill(1, 100, true);
 
-getSurvivor();
+	while(true) {
+		//	print_survivors($circle, key($circle));
 
-	function getSurvivor() {
-		$circle = array_fill(1, 100, true);
+		//Print out answer if there is only one item left in circle
+		if(count($circle) == 1){
+			echo '<strong>#'. key($circle) . '</strong> is the last one standing';
+			break;
+		}
 
-		while(true) {
-			//print_survivors($circle, key($circle));
-
-			//Print out answer if there is only one item left in circle
-			if(count($circle) == 1){
-				echo key($circle);
-				break;
-			}
-
-			//If at last element in array, move pointer to beginning of array and delete first item
-			//Else move to next element and delete
+		//If at last element in array, move pointer to beginning of array and delete first item
+		//Else move to next element and delete
+		if(key($circle) == array_key_last($circle)){
+			reset($circle);
+			unset($circle[key($circle)]);
+		}
+		else {
+			next($circle);
+			//If the next value is the last value in the array, delete element and reset pointer to beginning of array
+			//Else just delete element
 			if(key($circle) == array_key_last($circle)){
-				reset($circle);
 				unset($circle[key($circle)]);
+				reset($circle);
 			}
-			else {
-				next($circle);
-				//If the next value is the last value in the array, delete element and reset pointer to beginning of array
-				//Else just delete element
-				if(key($circle) == array_key_last($circle)){
-					unset($circle[key($circle)]);
-					reset($circle);
-				}
-				else
-					unset($circle[key($circle)]);
-			}
+			else
+				unset($circle[key($circle)]);
 		}
 	}
+
 
 	//Print Tracking of each survivor, with red number indicating who has sword
 	function print_survivors($circle, $swordPos){
